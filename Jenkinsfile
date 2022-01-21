@@ -30,8 +30,9 @@ pipeline{
       
        stage ('Deploy Stage'){
        steps{
-           withMaven(maven : 'Maven'){
-           sh 'mvn deploy'
+            scp MavenProject/target/webapp
+           //withMaven(maven : 'Maven'){
+           //sh 'mvn deploy'
      }
       }
        } 
