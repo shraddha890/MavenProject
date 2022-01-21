@@ -31,7 +31,7 @@ node{
       }
        } 
       
-       stage ('Deploy Stage'){
+       stage ('Deploy To Tomcat'){
        steps{
             sh "copy target\\MavenWebProject.war \"${tomcatWeb}\\MavenWebProject.war\""
        }
