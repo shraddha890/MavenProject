@@ -39,8 +39,8 @@ pipeline{
            //withMaven(maven : 'Maven'){
            //sh 'mvn deploy'
      }
-      }
-       } 
+      
+       
        
        
        }
