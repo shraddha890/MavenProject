@@ -1,7 +1,15 @@
 pipeline{
      agent any
+     environment {
+     }
+     
+     
      
      stages{
+      
+          stage ("clone code"){
+               steps{
+               git url :''}}
      
       stage ('Build Stage'){
       steps{
