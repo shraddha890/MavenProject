@@ -30,7 +30,12 @@ pipeline{
       
        stage ('Deploy Stage'){
        steps{
-            scp MavenProject/target/webapp
+           deploy adapters: [tomcat8(url: 'http://localhost:8080/', 
+                              credentialsId: 'manager')], 
+                war: 'target/*.war'}
+                    
+           // scp MavenProject/target/MavenWebProject.war ec2-user@17:32:39.688:
+           // scp <src_file> username@IP:<dest_path>
            //withMaven(maven : 'Maven'){
            //sh 'mvn deploy'
      }
