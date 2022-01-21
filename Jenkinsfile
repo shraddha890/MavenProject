@@ -1,7 +1,7 @@
 pipeline{ 
      agent any
      
-     def tomcatWEb = 'C:\Program Files\Apache Software Foundation\Tomcat9\webapps'
+     def tomcatWeb = 'C:\Program Files\Apache Software Foundation\Tomcat9\webapps'
      def  tomcatBin = 'C:\Program Files\Apache Software Foundation\Tomcat9\bin'
      def tomcatStatus=''
      tools{
