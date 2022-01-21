@@ -1,15 +1,16 @@
 pipeline{
      agent any
-     environment {
-     }
-     
-     
-     
+     tools{
+        maven 'Maven'
+       // jdk 'jdk'
+    }
      stages{
       
           stage ("clone code"){
                steps{
-               git url :''}}
+               git url :'https://github.com/shraddha890/MavenProject.git'
+               }
+          }
      
       stage ('Build Stage'){
       steps{
