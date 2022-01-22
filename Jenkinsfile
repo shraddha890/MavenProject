@@ -1,9 +1,9 @@
 pipeline{ 
      agent any
      
-     def tomcatWeb = 'C:\Program Files\Apache Software Foundation\Tomcat9\webapps'
-     def  tomcatBin = 'C:\Program Files\Apache Software Foundation\Tomcat9\bin'
-     def tomcatStatus=''
+     //def tomcatWeb = 'C:\Program Files\Apache Software Foundation\Tomcat9\webapps'
+     //def  tomcatBin = 'C:\Program Files\Apache Software Foundation\Tomcat9\bin'
+     //def tomcatStatus=''
      tools{
         maven 'Maven'
        // jdk 'jdk'
@@ -34,7 +34,11 @@ pipeline{
       
        stage ('Deploy To Tomcat'){
        steps{
-            sh "copy target\\MavenWebProject.war \"${tomcatWeb}\\MavenWebProject.war\""
+             deploy adapters: [tomcat8(url: 'http://localhost:8080/', 
+                              credentialsId: 'admin')], 
+                              war: 'target/*.war',
+                              contextPath: 'MavenProject'
+            //sh "copy target\\MavenWebProject.war \"${tomcatWeb}\\MavenWebProject.war\""
        }
         }
             
